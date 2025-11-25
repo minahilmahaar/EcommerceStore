@@ -1,4 +1,4 @@
-import { Component, Input, input, OnChanges } from '@angular/core';
+import { Component, Input, input, OnChanges, ViewEncapsulation } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { TopmenuComponent } from './header/topmenu/topmenu';
 import { Productlist } from './productlist/productlist';
@@ -6,9 +6,11 @@ import { ParentComponent } from './parent/parent';
 import { ChildComponent } from './child/child';
 import { CommonModule } from '@angular/common';
 import { Demo } from './demo/demo';
-import { Class } from './CustomDirectives/class';
-// ab hum ek component banaya howa kisi or File mein call krty hain to uske liye hume us component ko import krna parta hai
-// yh line meina Topheader component ko import kiya hai
+import { AppClassDirective } from './CustomDirectives/class';
+import { AppStyleDirective } from './CustomDirectives/style'; 
+import { Comp1} from './comp1/comp1';
+import { Comp2 } from './comp2/comp2';
+
 import { Topheader } from './topheader/topheader';
 import { TestComponentRenderer } from '@angular/core/testing';
 
@@ -16,9 +18,11 @@ import { TestComponentRenderer } from '@angular/core/testing';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, Topheader, TopmenuComponent, Productlist, ParentComponent, ChildComponent, Demo, CommonModule, Class],
+  imports: [HeaderComponent, Topheader, TopmenuComponent, Productlist, ParentComponent, ChildComponent, Demo, CommonModule, AppClassDirective, AppStyleDirective, Comp1, Comp2],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+//  encapsulation: ViewEncapsulation.None
+
 })
 export class AppComponent {
   title = 'Angular 17 Standalone App'; 
@@ -40,6 +44,15 @@ export class AppComponent {
   DestroyComponent(){
     //this.toDestroy = !this.toDestroy;
   }
+  active: boolean = false;
+  //active: boolean = true;
+  isOpen = true;   
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+
+
 }
 
 

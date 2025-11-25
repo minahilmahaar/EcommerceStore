@@ -75,3 +75,172 @@ demo p {
   font-family: 'Courier New', Courier, monospace;
   font-size: 18px;
 }
+:host {
+  display: block;
+  background : white;
+  padding: 40px;
+}
+/* ===== MODERN GLASS CARD EFFECT ===== */
+.notice-container {
+  width: 90%;
+  max-width: 900px;
+  background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+  border: 2px solid black;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 14px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.notice-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+.notice-topline {
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, .2);
+}
+.notice-link {
+  color: #ffe1a8;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+.notice-link strong {
+  color: #fff;
+  text-shadow: 0 0 4px rgba(255,255,255,0.5);
+}
+.notice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 25px;
+  border-bottom: 2px solid rgba(255, 255, 255, .2);
+}
+
+.notice-title {
+  font-size: 28px;
+  margin: 0;
+  color: #fff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+.toggle-btn {
+  width: 42px;
+  height: 42px;
+  font-size: 28px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  transition: background .3s ease, transform .4s ease;
+}
+
+.toggle-btn:hover {
+  background: #fff;
+  transform: rotate(180deg);
+}
+.notice-body {
+  padding: 25px 28px;
+  transition: max-height .35s ease, padding .35s ease, opacity .35s ease;
+  overflow: hidden;
+  max-height: 2000px;
+  opacity: 1;
+}
+.notice-body.closed {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+}
+.notice-body h2 {
+  margin-top: 28px;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  font-weight: bold;
+  color: #ffe8c6;
+  font-family: 'Courier New', Courier, monospace;
+  border-left: 4px solid #ffcf70;
+  padding-left: 10px;
+}
+.notice-body p {
+  margin: 12px 0;
+  color: #f8f8f8;
+  line-height: 1.6;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.notice-body p + h2 {
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+@media (max-width: 600px) {
+
+  .notice-title {
+    font-size: 20px;
+  }
+
+  .toggle-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+
+  .notice-body {
+    padding: 18px;
+  }
+}
+.app-wrapper {
+  width: 800px;
+  margin: 20px auto;
+}
+.app-component {
+  text-align: center;
+  border: 2px solid #1976d2;
+  padding: 40px 20px;
+  margin: 30px 10px;
+  border-radius: 12px;
+  background: white;
+ 
+}
+.app-component h2,
+.app-component p {
+  color: #1976d2;
+}
+.app-component:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.component-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;          
+  margin-top: 40px;
+}
+.FirstButton {
+  width: 120px;
+  height: 35px;
+  border: none;
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.FirstButton:hover {
+  background-color: #125daa;
+}
+
+:host {
+  display: block;
+}

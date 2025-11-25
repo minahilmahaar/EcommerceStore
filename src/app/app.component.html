@@ -1,8 +1,9 @@
-<app-topheader></app-topheader>
+ <app-topheader></app-topheader>
 <app-header></app-header>
 <top-menu></top-menu>
 <product-list></product-list>
 <app-parent></app-parent>
+
 
 <div class="container">
     <app-demo [message]="InputVal" *ngIf="!toDestroy">
@@ -11,17 +12,84 @@
 
     <input type="text" #MyTestBox (focus)="0"> 
     <button (click)="btnClick(MyTestBox.value)">Submit</button>
-        <br><br>
+    <br><br>
 
     <button (click)="DestroyComponent()">Show/Hide</button>
 </div>
-<!--Custom class-->
+
 <h2 class="Customs">Custom class & Style Directives</h2>
 
-<div appclass [display]="{'app-container': true, 'apphighlight':false, appfont: 5 > 2 }">
+<!-- Custom Class Directive -->
+<div [appClass]="{'app-container': true, 'apphighlight': true, 'appfont': 5 > 2}">
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
         quas eius sint libero magnam quibusdam quasi fuga incidunt quod rerum?
         Autem atque similique!.
     </p>
+</div>
+
+<!-- Custom Style Directive -->
+<!--<div class="app-container"
+     [appStyle]="{
+        backgroundColor: active ? 'blue' : 'green',
+        color: active ? 'white' : 'black'
+     }">
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
+        quas eius sint libero magnam quibusdam quasi fuga incidunt quod rerum?
+        Autem atque similique!.
+    </p>
+</div>-->
+<div class="notice-container">
+  <div class="notice-topline">
+    <a class="notice-link">
+      Read <strong>terms of services</strong> and <strong>privacy policy</strong>.
+    </a>
+  </div>
+  <div class="notice-header">
+    <h2 class="notice-title">Terms of services & privacy policy</h2>
+<button class="toggle-btn" (click)="toggle()">
+      {{ isOpen ? '−' : '+' }}
+    </button>
+  </div>
+  <div class="notice-body" [class.closed]="!isOpen">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+    </p>
+
+    <h2>Terms of services</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+    </p>
+
+    <h2>Privacy Policy</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+    </p>
+  </div>
+</div>
+<!--comp-->
+<!--<div style="margin: 20px auto; width: 780px;">
+  <div class="app-component">
+    <h2>App-component</h2>
+    <p>This is <b>app</b>component</p>
+  <button>Button</button>
+  </div>
+  <div class="component-container">
+    <app-comp1></app-comp1>
+    <app-comp2></app-comp2>
+  </div>
+</div>-->
+<div class="app-wrapper">
+  <div class="app-component">
+    <h2>App-component</h2>
+    <p>This is <b>app</b> component</p>
+    <button class="FirstButton">Button</button>
+  </div>
+
+
+  <div class="component-container">
+    <app-comp1></app-comp1>
+    <app-comp2></app-comp2>
+  </div>
 </div>

@@ -1,0 +1,32 @@
+.comp1-component {
+  width: 300px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  background: white;
+  border: 2px solid #1976d2;
+}
+.comp1-component h2,
+.comp1-component p {
+  color: #1976d2;
+}
+.comp1-component:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.SecondButton {
+  width: 120px;
+  height: 35px;
+  border: none;
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.SecondButton:hover {
+  background-color: #125daa;
+}

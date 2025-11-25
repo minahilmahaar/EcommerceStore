@@ -1,17 +1,19 @@
-import { Directive, ElementRef, Input, Renderer2} from '@angular/core';
-
+ import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
+ 
 @Directive({
-  selector: '[appClass]'
-
+  selector: '[appClass]' 
+   
 })
-export class Class {
+export class AppClassDirective {
 
-  constructor(private element: ElementRef, private render: Renderer2) {
+  constructor(private element: ElementRef, private render: Renderer2) { }
 
-   }
-@Input() set display (value:object){
-  let entries = Object.entries(value);
-  console.log(entries);
-  
-};
+   @Input('appClass') set display(value: object) {
+    let entries = Object.entries(value);
+    for (let [className, condition] of entries) {
+      if (condition) {
+        this.render.addClass(this.element.nativeElement, className);
+      }
+    }
+  }
 }
