@@ -1,0 +1,11 @@
+<!--<div class="admin-user-list" *ngFor="let user of userlist">-->
+  <div class="admin-user-name">{{ user.name }}</div>
+  <div class="admin-user-gender">{{ user.gender }}</div>
+  <div class="admin-user-subtype">{{ user.subtype }}</div>
+  <div class="admin-user-active">{{ user.active }}</div>
+
+  <button class="admin-user-show-detail-btn" 
+  (click)="showUserDetail(user)">+</button>
+</div>
+
+

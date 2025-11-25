@@ -1,4 +1,4 @@
- <header class="header">
+ <!--<header class="header">
   <h2>My Portfolio Header</h2>
   <nav>
     <a href="#">Home</a>
@@ -6,4 +6,12 @@
     <a href="#">Projects</a>
     <a href="#">Contact</a>
   </nav>
-</header>
+</header>-->
+<nav class="navbar">
+  <div class="logo">MYSITE</div>
+  <ul class="nav-links">
+    <li><a href="#" (click)="HomeClicked(); $event.preventDefault()">Home</a></li>
+    <li><a href="#" (click)="AdminClicked(); $event.preventDefault()">Admin</a></li>
+    <li><button class="subscribe-btn" (click)="OnSubscribe()">SUBSCRIBE</button></li>
+  </ul>
+</nav>

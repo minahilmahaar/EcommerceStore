@@ -1,5 +1,4 @@
- <app-search (searchChange)="onSearch($event)"></app-search>
-
+<app-search (searchChange)="onSearch($event)"></app-search>
 <!-- Product list -->
 <div class="product-list">
   <div class="product-card" *ngFor="let item of filteredProducts" (click)="openSpecs(item)">
