@@ -89,6 +89,7 @@ export class AppComponent {
     });
   }
 
+  // li
   buttonClicked() { 
     let count=0;
     if (this.creatBtn) {
