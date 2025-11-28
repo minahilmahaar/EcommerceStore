@@ -1,9 +1,8 @@
  <app-topheader></app-topheader>
 <!-- Listen to the event from header -->
 <app-header (subscribeClicked)="onSubscribeFromHeader()"></app-header>
-
-<!-- Only show Admin when Subscribe was clicked -->
 <app-admin *ngIf="showAdmin"></app-admin>
+<app-user-list></app-user-list>
 <top-menu></top-menu>
 <product-list></product-list>
 <app-parent></app-parent>
@@ -72,7 +71,7 @@
     <app-comp2></app-comp2>
   </div>
 </div>-->
-<div class="app-wrapper">
+<!--<div class="app-wrapper">
   <div class="app-component">
     <h2>App-component</h2>
     <p>This is <b>app</b> component</p>
@@ -84,4 +83,14 @@
     <app-comp1></app-comp1>
     <app-comp2></app-comp2>
   </div>
+</div>-->
+<!--oberveable-->
+<div class="observable-container">
+  <h2>Observable in Angular</h2>
+<!--<div class="data-list" *ngFor="let x of data">{{ x }}</div>
+<button class="get btn" (click)="GetAsyncData()">Get Button</button>-->
+
+
+<div id="container"></div>
+<button (click)="buttonClicked()" #creatbtn>Create</button>
 </div>

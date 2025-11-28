@@ -1,0 +1,26 @@
+  .user-list {
+  display: flex;
+text-align: center;
+  gap: 10px;
+}
+
+.admin-user-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  width: 250px;
+}
+
+.user-field {
+  margin: 3px 0;
+}
+
+.active {
+  color: green;
+  font-weight: bold;
+}
+
+.inactive {
+  color: red;
+  font-weight: bold;
+}

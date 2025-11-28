@@ -1,38 +1,32 @@
-import { Component } from '@angular/core';
+ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule, NgForOf } from '@angular/common';
+import { userServices } from '../../services/user.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
-  imports: [NgForOf],
+  standalone: true,
+  imports: [CommonModule, NgForOf],
   templateUrl: './admin.html',
-  styleUrl: './admin.css',
+  styleUrls: ['./admin.css'],
 })
-export class AdminComponent {
-  showUserList: boolean = false;
+export class AdminComponent implements OnInit, OnDestroy {
 
-  userlist = [
-     { name: "Minahil", gender: "Female", subtype: "Premium", active: true },
-    { name: "Ali", gender: "Male", subtype: "Standard", active: false },
-  ];
+  user: any = null;
+  subscription!: Subscription;
 
+  constructor(private userService: userServices) {}
 
-
-
-  onAdminClick() {
-
- this.userlist = [
-    { name: "Minahil", gender: "Female", subtype: "Premium", active: true },
-    { name: "Ali", gender: "Male", subtype: "Standard", active: false },
-  ];
-
-    // this.showUserList = !this.showUserList;
+  ngOnInit() {
+    this.subscription = this.userService.selectedUser$
+      .subscribe(selected => {
+        this.user = selected;
+      });
   }
 
-
-  showUserDetail(user: any) {
-    console.log("User Detail:", user);
-    alert("User Detail: " + JSON.stringify(user));
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }
-
-

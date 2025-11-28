@@ -1,8 +1,58 @@
-<div 
+<!--<div 
   class="admin-user-card" 
   *ngFor="let user of userlist; ">
 
   <div class="user-field name">{{ user.name }}</div>
   <div class="user-field gender">{{ user.gender }}</div>
   <div class="user-field subtype">{{ user.subtype }}</div>
+</div>-->
+<!--<div class="container" *ngIf="user">
+  <h2 class="title">{{ user.name }}</h2>
+
+  <div class="details">
+    <div class="row">
+      <div class="label">ID</div>
+      <div class="value">{{ user.id }}</div>
+    </div>
+
+    <div class="row">
+      <div class="label">Email</div>
+      <div class="value">{{ user.email }}</div>
+    </div>
+
+    <div class="row">
+      <div class="label">Phone</div>
+      <div class="value">{{ user.phone }}</div>
+    </div>
+
+    <div class="row">
+      <div class="label">Address</div>
+      <div class="value">{{ user.address }}</div>
+    </div>
+  </div>
 </div>
+
+<div *ngIf="!user" class="no-user">
+  Please click Admin to load user details.
+</div>-->
+<div class="admin">
+  <div class="form-row">
+    <input type="text" placeholder="User Name" />
+    <select>
+      <option>Male</option>
+      <option>Female</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <select>
+      <option>Monthly</option>
+      <option>Yearly</option>
+    </select>
+    <select>
+      <option>Active</option>
+      <option>Inactive</option>
+    </select>
+  </div>
+  <button>CREATE</button>
+</div>
+
