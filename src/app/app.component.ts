@@ -44,7 +44,7 @@ export class AppComponent {
 
   arry1 = [1, 2, 3, 4, 5];
   arry2 = ['A', 'B', 'C', 'D'];
-
+  count: any =0;
   promis = new Promise((resolve, reject) => {
     resolve([10, 20, 30, 40, 50, this.arry1])
   });
@@ -91,14 +91,16 @@ export class AppComponent {
 
   // li
   buttonClicked() { 
-    let count=0;
+   
     if (this.creatBtn) {
       this.creatBtnObs = fromEvent(this.creatBtn.nativeElement, 'click');
       this.creatBtnObs.subscribe(() => {
         console.log(this.data);
-        this.showitem(count++);
+        this.showitem(this.count++);
       });
     }
+  this.showitem(this.count++);
+
   }
   ngAfterViewInit(){
 this.buttonClicked();
