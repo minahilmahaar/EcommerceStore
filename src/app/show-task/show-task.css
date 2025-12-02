@@ -1,0 +1,12 @@
+ .container1 {
+  margin-top: 40px;   
+  padding: 10px;
+}
+
+.task-list {
+  background: #f3f3f3;
+  padding: 12px;
+  margin-bottom: 10px;  
+  border-radius: 6px;
+  font-size: 16px;
+}

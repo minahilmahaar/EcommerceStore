@@ -14,15 +14,21 @@ import { AdminComponent } from './header/admin/admin';
 import { UserListComponent } from './header/admin/user-list/user-list';
 import { UserDetail } from './header/admin/user-detail/user-detail';
 import { Topheader } from './topheader/topheader';
-import { from, Observable, of, fromEvent } from 'rxjs';
+import { from, Observable, of, fromEvent, map, filter } from 'rxjs';
+import { NewTask } from './new-task/new-task';
+import { ShowTask } from './show-task/show-task';
+import { SubjectDemo } from './subject/subject';
+import { Unsubscribe } from './unsubscribe/unsubscribe';
+
 
 @Component({
   selector: 'app-root',
-  standalone: true,
+  standalone: true, 
   imports: [
     HeaderComponent, Topheader, TopmenuComponent, Productlist, ParentComponent,
     ChildComponent, Demo, CommonModule, AppClassDirective, AppStyleDirective,
-    Comp1, Comp2, AdminComponent, UserListComponent, UserDetail
+    Comp1, Comp2, AdminComponent, UserListComponent, UserDetail, NewTask, ShowTask,
+SubjectDemo, Unsubscribe
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
@@ -45,12 +51,22 @@ export class AppComponent {
   arry1 = [1, 2, 3, 4, 5];
   arry2 = ['A', 'B', 'C', 'D'];
   count: any =0;
+  //promiss
   promis = new Promise((resolve, reject) => {
-    resolve([10, 20, 30, 40, 50, this.arry1])
+    resolve([10, 20, 30, 40, 50])
   });
-
-  myObservable = from(this.promis);
-
+//myObservable2 4 6 8 10
+//result  10 20 30 40 50
+  myObservable = from([2, 4, 6, 8, 10]).pipe();
+  filterObs = this.myObservable.pipe(map((val) => {
+  return val * 5;
+  }), filter((val, i) => {
+return val % 4 ===0 ;
+  }));
+  //filter
+// filterObs = this.transformObs.pipe(filter((val, i) => {
+// return val % 4 ===0 ;
+// }))
   constructor() { }
 
   //ngAfterViewInit() {
@@ -76,41 +92,41 @@ export class AppComponent {
   }
 
   GetAsyncData() {
-    this.myObservable.subscribe({
-      next: (val: any) => {
-        this.data.push(val);
-      },
-      error: (err) => {
-        alert(err.message);
-      },
+ //   this.myObservable.subscribe({
+   //   next: (val: any) => {
+     //   this.data.push(val);
+      //},
+      //error: (err) => {
+        //alert(err.message);
+      //},
       complete: () => {
         alert('all the data streamed');
       }
-    });
+    //});
   }
 
   // li
-  buttonClicked() { 
+  // buttonClicked() { 
    
-    if (this.creatBtn) {
-      this.creatBtnObs = fromEvent(this.creatBtn.nativeElement, 'click');
-      this.creatBtnObs.subscribe(() => {
-        console.log(this.data);
-        this.showitem(this.count++);
-      });
-    }
-  this.showitem(this.count++);
+  //   if (this.creatBtn) {
+  //     this.creatBtnObs = fromEvent(this.creatBtn.nativeElement, 'click');
+  //     this.creatBtnObs.subscribe(() => {
+  //       console.log(this.data);
+  //       this.showitem(this.count++);
+  //     });
+  //   }
+  // this.showitem(this.count++);
 
-  }
-  ngAfterViewInit(){
-this.buttonClicked();
-  }
-  showitem(val){
-    let div = document.createElement('div');
-div.innerText= 'item'+ val;
-div.className='data-list';
-document.getElementById('container').appendChild(div);
-  }
+  // }
+  //ngAfterViewInit(){
+//this.buttonClicked();
+ // }
+//   showitem(val){
+//     let div = document.createElement('div');
+// div.innerText= 'item'+ val;
+// div.className='data-list';
+// document.getElementById('container').appendChild(div);
+//   }
 
 
 }

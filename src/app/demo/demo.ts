@@ -1,61 +1,69 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, input, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild,} from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input,OnChanges, OnDestroy,OnInit,  SimpleChanges, ViewChild } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-demo',
-  standalone:true,
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './demo.html',
   styleUrls: ['./demo.css'],
 })
-export class Demo implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
-  title: string = 'Demo'
+export class Demo implements 
+  OnChanges, 
+  OnInit, 
+  DoCheck, 
+  AfterContentInit, 
+  AfterContentChecked, 
+  AfterViewInit, 
+ 
+  OnDestroy 
+{
+ // title: string = 'Demo';
 
- @Input() message : string ='';
-  //  message: string = ''; 
- @ViewChild('temp') tempPara!: ElementRef;
- @ContentChild('childMsg') paraContent!: ElementRef;
- paracontent: any;
- constructor(){
-  //console.log('Demo Constructor Called')
- //console.log('this.title');
- //console.log('this.message');
-}
-ngOnChanges(changes: SimpleChanges){
-//console.log('ngOnChanges Test Called');
-//console.log(changes);
-}
-ngOnInit(){
-//console.log('ngOnInit Test Called');
-//console.log(this.tempPara.nativeElement.innerHTML);
-}
-ngDoCheck(){
-//console.log('ngDoCheck Test Called');
-//console.log('In ngDoCheck this.paraContent');
-}
-ngAfterContentInit(){
-//console.log('ngAfterContentInit Test Called');
-//console.log('In ngAftercontentInit', this.paraContent.nativeElement);
-}
-  ngAfterContentChecked() {
-    //console.log('ngAfterContentChecked Called');
+  @Input() message: string = '';
 
-    //if (this.paraContent) {
-      //console.log(
-        //'ContentChild (Checked):',
-       // this.paraContent.nativeElement.innerText
-      //);
-      //}
+  //@ViewChild('temp') tempPara!: ElementRef;
+  //@ContentChild('childMsg') paraContent!: ElementRef;
+
+//   constructor() {
+//     console.log('Demo Constructor Called');
+// }
+
+  ngOnChanges(changes: SimpleChanges) {
+    // console.log('ngOnChanges Called');
+    // console.log(changes);
   }
-  ngAfterViewInit(){
-console.log('ngAfterViewInit Test Called');
-//console.log('In ngAfterViewInit', this.tempPara);
+
+  ngOnInit() {
+    // console.log('ngOnInit Called');
+    // console.log(this.tempPara?.nativeElement?.innerHTML);
+  }
+
+  ngDoCheck() {
+    // console.log('ngDoCheck Called');
+  }
+
+  ngAfterContentInit() {
+    // console.log('ngAfterContentInit Called');
+    // console.log('ContentChild:', this.paraContent?.nativeElement);
+  }
+
+  ngAfterContentChecked() {
+    // console.log('ngAfterContentChecked Called');
+  }
+
+  ngAfterViewInit() {
+    // console.log('ngAfterViewInit Called');
+    // console.log('ViewChild:', this.tempPara);
+  }
+
+ // ngAfterViewChecked() {
+   // console.log('ngAfterViewChecked Called');
+    // console.log(this.tempPara?.nativeElement?.textContent);
+  //}
+
+  ngOnDestroy() {
+    console.log('ngOnDestroy Called');
+  }
 }
-ngAfterViewChecked(){
-console.log('ngAfterViewChecked Test Called');
-//console.log(this.tempPara.nativeElement.textContent)
-}
-ngOnDestroy(){
-console.log('ngOnDestroy Test Called');
-}
-} 
