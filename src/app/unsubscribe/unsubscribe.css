@@ -1,61 +1,73 @@
- /* Body ka background black */
 body {
   background-color: #000;
   font-family: Arial, sans-serif;
   color: #fff;
   margin: 0;
-  padding: 0;
+  padding: 20px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center; 
   align-items: flex-start;
   height: 100vh;
 }
 
-/* Left side gray div */
+.main-container {
+  width: 95%;
+  height: 60%;         
+  background-color: #000;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 5px;
+}
+
 .left-div {
-  background-color: #555; /* gray */
+border-radius: 5px;
+    margin-top: 30px;
+  margin-left: 30px;  
+  margin-bottom: 20px;   
+  background-color: white;
   padding: 20px;
-  width: 250px;
-  height: 100%;
+  width: 280px;
+  height: auto;          
   display: flex;
   flex-direction: column;
-  align-items: center;
   box-sizing: border-box;
 }
 
-/* Top text "Subscribe 1" */
+
 .left-div h2 {
-  margin: 0 0 20px 0;
+  margin: 0;
   font-size: 18px;
-  color: #fff;
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/* Columns container */
+.left-div hr {
+  width: 100%;
+  border: 1px solid black;
+  margin: 10px 0 20px 0;
+}
+
 .columns {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
   width: 100%;
-  margin-bottom: 20px;
 }
 
-/* Individual column */
 .column {
-  background-color: #777;
-  color: #fff;
+  background-color: rgb(188, 186, 186);
+  color: #000;
   padding: 10px;
   text-align: center;
-  flex: 1;
-  margin: 0 2px;
   border-radius: 4px;
 }
 
-/* Buttons container */
 .button-container {
   display: flex;
   gap: 10px;
+  margin-top: 20px;
 }
 
-/* Subscribe / Unsubscribe buttons */
 .button-container button {
   flex: 1;
   padding: 8px 0;
@@ -65,14 +77,12 @@ body {
   font-weight: bold;
 }
 
-/* Subscribe button style */
-.button-container .subscribe {
+.button-container .Subscribe {
   background-color: #28a745;
   color: #fff;
 }
 
-/* Unsubscribe button style */
 .button-container .unsubscribe {
-  background-color: #dc3545;
+  background-color: #28a745;
   color: #fff;
 }

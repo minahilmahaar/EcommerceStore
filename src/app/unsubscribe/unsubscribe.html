@@ -1,11 +1,43 @@
-<div class="left-div">
-  <h2>Subscribe 1</h2>
-  <div class="columns">
-    <div class="column" *ngFor="let x of numbers">{{ x }}</div>
-  </div>
+<div class="main-container">
+  <div class="left-div">
+    <h2>Subscribe 1</h2>
+    <hr />
 
-  <div class="button-container">
-    <button class="subscribe">Subscribe</button>
-    <button class="unsubscribe">Unsubscribe</button>
+    <div class="columns">
+      <div class="column" *ngFor="let x of data1">{{ x }}</div>
+    </div>
+
+    <div class="button-container">
+      <button class="Subscribe" (click)="OnSubscribe1()">Subscribe</button>
+      <button class="unsubscribe" (click)="OnUnSubscribe1()">Unsubscribe</button>
+    </div>
+  </div>
+ 
+  <div class="left-div">
+    <h2>Subscribe 2</h2>
+    <hr />
+
+    <div class="columns">
+      <div class="column" *ngFor="let x of data2">{{ x }}</div>
+    </div>
+
+    <div class="button-container">
+      <button class="Subscribe" (click)="OnSubscribe2()">Subscribe</button>
+      <button class="unsubscribe" (click)="OnUnSubscribe2()">Unsubscribe</button>
+    </div>
+  </div>
+ 
+  <div class="left-div">
+    <h2>Subscribe 3</h2>
+    <hr />
+
+    <div class="columns">
+      <div class="column" *ngFor="let x of data3">{{ x }}</div>
+    </div>
+
+    <div class="button-container">
+      <button class="Subscribe" (click)="OnSubscribe3()">Subscribe</button>
+      <button class="unsubscribe" (click)="OnUnSubscribe3()">Unsubscribe</button>
+    </div>
   </div>
 </div>
